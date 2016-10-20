@@ -1,7 +1,7 @@
 require "rails_helper"
 
-describe "User edits a job" do
-  scenario "user can edit a prexisitng job" do
+describe "User deletes a job" do
+  scenario "user can delete a prexisitng job" do
     company = Company.create(name: "Bonobos", city: "NYC")
     job = Job.create(title: "Developer", description: "Cool Job", level_of_interest: 10, company_id: company.id)
 
@@ -9,11 +9,7 @@ describe "User edits a job" do
 
     click_on "Bonobos"
     click_on "Developer"
-    click_on "Edit"
-    fill_in "job[title]", with: "Engineer"
-    click_button "Update Job"
-
-    expect(page).to have_content "Engineer"
+    click_on "Delete"
     expect(page).to_not have_content "Developer"
   end
 end
