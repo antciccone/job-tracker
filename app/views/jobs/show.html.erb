@@ -12,12 +12,23 @@ Level of Interest: <%= @job.level_of_interest %>
 Company Category <%= @job.category.nil? ? "not assigned " : @job.category.title %>
 <br>
 
-Company: <%= link_to @job.company.name, company_path(@job.company) %>
+Company: <%= link_to @job.company.name, company_path(@job.company) %></br>
 
+<p> Comments about job:><p>
+<ul>
+  <% jobbs = @job.comments.sort_by {|comment| comment.created_at} %>
+  <% jobbs.reverse.each do |comment| %>
+  <li><%= comment.notes %></li></br>
+  <%=time_ago_in_words(comment.created_at) %>
+  <% end %>
+</ul>
 
-<%= form_for @comments do |f| %>
-  <%= f.label "Title" %>
-  <%= f.text_field :title %>
+</br>
 
-  <%= f.submit %>
+<%= form_for [@company, @job, @comment] do |f| %>
+<p>
+  <%= f.label "Comments" %></br>
+  <%= f.text_area :notes %>
+</p>
+  <p><%= f.submit %></p>
 <% end %>
