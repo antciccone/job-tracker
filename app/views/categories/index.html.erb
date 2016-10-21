@@ -1,6 +1,11 @@
-<p> <%= link_to "New Category", new_category_path %> </p>
+<%= link_to "New Category", new_category_path %>
+ <%= link_to "All Companines", companies_path %>
+
 <h1> All Categories </h1>
 <% @categories.each do |category| %>
-<p> <%= link_to category.title, category_path(category)%> </p>
+<h4> <%= link_to category.title, category_path(category)%> </h4>
+<%= link_to "Edit", edit_category_path(category) %>
+<%= link_to "Delete", category_path(category), method: :delete %>
+
 
 <% end %>

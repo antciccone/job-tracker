@@ -1,5 +1,5 @@
 <%= link_to "Edit Job", edit_company_job_path(@job.company, @job) %>
-<%= link_to "Delete Job", company_job_path, method: :delete %> </br> 
+<%= link_to "Delete Job", company_job_path, method: :delete %> </br>
 Title: <%= @job.title %>
 <br>
 
@@ -9,4 +9,15 @@ Description: <%= @job.description %>
 Level of Interest: <%= @job.level_of_interest %>
 <br>
 
+Company Category <%= @job.category.nil? ? "not assigned " : @job.category.title %>
+<br>
+
 Company: <%= link_to @job.company.name, company_path(@job.company) %>
+
+
+<%= form_for @comments do |f| %>
+  <%= f.label "Title" %>
+  <%= f.text_field :title %>
+
+  <%= f.submit %>
+<% end %>
