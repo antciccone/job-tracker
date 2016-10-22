@@ -1,5 +1,7 @@
 class CompaniesController < ApplicationController
   def index
+    # @companies = Company.all.order(params[:sort])
+    
     @companies = Company.all
   end
 
