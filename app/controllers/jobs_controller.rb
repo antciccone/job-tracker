@@ -1,9 +1,16 @@
 class JobsController < ApplicationController
   def index
+    if params.include?("sort")
+      @job_all = Job.all.order(:level_of_interest).reverse
+
+      render :interest
+    else
     @contact = Contact.new
     @contacts = Contact.all
     @company = Company.find(params[:company_id])
     @jobs = @company.jobs
+    render :index
+    end
   end
 
   def new
@@ -55,5 +62,14 @@ class JobsController < ApplicationController
 
   def job_params
     params.require(:job).permit(:title, :description, :level_of_interest, :category_id)
+  end
+
+  def level_of_interest
+    a = Job.group(:level_of_interest).count
+    result = a.reduce([]) do |array, e|
+      array << e.first.to_s + "=>" + Job.find_by(title: e.second).title
+      array
+      byebug
+    end
   end
 end

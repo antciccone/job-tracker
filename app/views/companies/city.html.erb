@@ -1,0 +1,5 @@
+<h1> City: <%= @company.first.city %> </h1>
+<% @company.each do |city| %>
+There are <%= city.jobs.count %> jobs in <%= @company.first.city %>
+<% end %>
+<p><%= link_to "Companies" %><p>
