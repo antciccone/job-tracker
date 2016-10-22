@@ -1,3 +1,6 @@
+<% @companies.each do |city| %>
+<%= link_to city, ("#{companies_path}""?location=""#{city}") %>
+<% end %>
 <h4> Top Three Companies Average Level of interest </h4>
 <ol>
 <% @company.each do |k, v| %>
