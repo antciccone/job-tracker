@@ -1,4 +1,5 @@
 class JobsController < ApplicationController
+
   def index
     if params.include?("sort")
       @job_all = Job.all.order(:level_of_interest).reverse

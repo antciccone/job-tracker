@@ -1,4 +1,19 @@
-<h3> Jobs By Level of Interest </h3>
+
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <title>Job Tracker</title>
+    <link href='css/bootstrap.css' rel='stylesheet'>
+    <link href='css/main.css' rel='stylesheet'>
+</head>
+
+<div class='navbar navbar-inverse'>
+  <a class='navbar-brand' <%= link_to "Dashboard", ("#{dashboard_index_path}") %></a>
+
+</div>
+
+<center> <h3> Jobs By Level of Interest </h3></center>
 <% @job_all.each do |job| %>
-<%= job.title %>'s level of interest <%= job.level_of_interest %></br>
+<center><%= job.title %>'s level of interest <%= job.level_of_interest %></br></center>
 <% end %>

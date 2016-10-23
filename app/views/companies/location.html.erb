@@ -1,9 +1,29 @@
-<h4> Companies Sorted by Location </h4> 
-<ol>
-<% @companies.each do |company| %>
-<li><%= company.name %>: <%= company.city %></li>
-<% company.jobs.each do |job| %>
-  <%= job.title %></br>
-  <% end  %>
-<% end %>
-</ol>
+
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <title>Job Tracker</title>
+    <link href='css/bootstrap.css' rel='stylesheet'>
+    <link href='css/main.css' rel='stylesheet'>
+</head>
+
+<body>
+    <div class='navbar navbar-inverse'>
+    <a href='/dashboard' class='navbar-brand'>Dashboard</a>
+  </div>
+
+<div class="location">
+  <h4> Companies Sorted by Location</h4>
+  <ol class "center">
+    <% @companies.each do |company| %>
+    <strong><li><%= company.name %>: <%= company.city %></li></strong>
+    <% company.jobs.each do |job| %>
+    <%= job.title %></br>
+    <% end  %>
+    <% end %>
+  </ol>
+</div>
+
+  </body>
+  </html>
