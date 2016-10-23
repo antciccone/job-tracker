@@ -7,8 +7,7 @@ class ContactsController < ApplicationController
 
     redirect_to company_jobs_path(@contact.company)
   end
-
-end
+end 
 
   private
 

@@ -28,16 +28,15 @@
 <h4> Top Three Companies Average Level of interest </h4>
 <ol>
 <% @company.each do |k, v| %>
-<li><%= Company.find(k).name %>'s jobs have a <%= v %> average level of Interest</li>
+<li><%= "#{Company.find(k).name}'s jobs have a #{v} average level of Interest"%></li>
 <% end %>
 </ol>
 
 
-
 <p> Count of Jobs by level of Interest </p>
-  <% @job.each do |first, second| %>
+  <% @job.each do |interest, number| %>
   <ul>
-   <li><%=second.to_s%> Jobs with a level of interest of  <%= first %></li>
+   <li><%="#{number.to_s} Jobs with a level of interest of #{interest}" %></li>
  </ul>
    <% end  %>
 
