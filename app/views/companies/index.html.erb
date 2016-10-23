@@ -1,4 +1,17 @@
-<%= link_to "Dashboard", dashboard_index_path %>
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <title>Job Tracker</title>
+    <link href='css/bootstrap.css' rel='stylesheet'>
+    <link href='css/main.css' rel='stylesheet'>
+</head>
+
+<div class='navbar navbar-inverse'>
+<a class='navbar-brand'  <%= link_to "Dashboard", dashboard_index_path %> </a>
+</div>
+
+
 <h3>All Companies</h3>
 
 <% @companies.each do |company| %>

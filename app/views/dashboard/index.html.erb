@@ -12,6 +12,8 @@
   <div class='navbar navbar-inverse'>
 <a class='navbar-brand' <%= link_to "Companies Sorted by Location", ("#{companies_path}""?sort=location") %></a>
 <a class='navbar-brand' <%= link_to "Jobs Sorted by Interest", ("#{jobs_path}""?sort=interest") %></a>
+<a class='navbar-brand' <%= link_to "Companies", ("#{companies_path}") %></a>
+
 <ul class='nav navbar-nav navbar-right'>
 
 <a class="dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Cities<span class="caret"></span></a>
@@ -30,12 +32,17 @@
 <% end %>
 </ol>
 
+
+
 <p> Count of Jobs by level of interst </p>
   <% @job.each do |first, second| %>
   <ul>
    <li><%=second.to_s%> Jobs with a level of interest of  <%= first %></li>
  </ul>
    <% end  %>
+
+
+
   <body>
   </div>
 
