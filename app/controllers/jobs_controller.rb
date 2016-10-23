@@ -2,14 +2,13 @@ class JobsController < ApplicationController
   def index
     if params.include?("sort")
       @job_all = Job.all.order(:level_of_interest).reverse
-
       render :interest
     else
-    @contact = Contact.new
-    @contacts = Contact.all
-    @company = Company.find(params[:company_id])
-    @jobs = @company.jobs
-    render :index
+      @contact = Contact.new
+      @contacts = Contact.all
+      @company = Company.find(params[:company_id])
+      @jobs = @company.jobs
+      render :index
     end
   end
 

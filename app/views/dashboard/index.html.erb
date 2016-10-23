@@ -1,6 +1,7 @@
 <% @companies.each do |city| %>
 <%= link_to city, ("#{companies_path}""?location=""#{city}") %>
 <% end %>
+<%= link_to "Companies Sorted by Location", ("#{companies_path}""?sort=location") %>
 <h4> Top Three Companies Average Level of interest </h4>
 <ol>
 <% @company.each do |k, v| %>

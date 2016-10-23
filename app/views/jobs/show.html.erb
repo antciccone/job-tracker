@@ -14,12 +14,12 @@ Company Category <%= @job.category.nil? ? "not assigned " : @job.category.title 
 
 Company: <%= link_to @job.company.name, company_path(@job.company) %></br>
 
-<p> Comments about job:><p>
+<p> Comments about job:<p>
 <ul>
   <% jobbs = @job.comments.sort_by {|comment| comment.created_at} %>
   <% jobbs.reverse.each do |comment| %>
   <li><%= comment.notes %></li></br>
-  <%=time_ago_in_words(comment.created_at)  %> ago   
+  <%=time_ago_in_words(comment.created_at)  %> ago
   <% end %>
 </ul>
 

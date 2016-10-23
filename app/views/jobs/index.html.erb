@@ -23,7 +23,7 @@ All Jobs for <strong><%= @company.name %></strong>
   <%= f.submit %>
 <% end %>
 
-<p> Contact Information </p> 
+<p> Contact Information </p>
 <% @company.contacts.each do |contact| %>
 <ul>
   <li><%= contact.full_name %></li>
