@@ -9,7 +9,7 @@ describe "Vists company page by location" do
     visit dashboard_index_path
     click_on "Companies Sorted by Location"
 
-    within("ol > li:first-child") do
+    within("strong:first-child > li:first-child") do
       expect(page).to have_content "Captian U"
     end
   end

@@ -1,4 +1,5 @@
 
+<p><%= link_to "All Companies", companies_path %></p>
 
 
 All Jobs for <strong><%= @company.name %></strong>
@@ -8,7 +9,6 @@ All Jobs for <strong><%= @company.name %></strong>
 <% end %>
 
 <p><%= link_to "Add new job", new_company_job_path %></p>
-<p><%= link_to "All Companies", companies_path %></p>
 
 
 <p> Add Contact for <%= @company.name %>
