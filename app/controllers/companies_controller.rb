@@ -5,7 +5,7 @@ class CompaniesController < ApplicationController
 
     if params.include?("sort")
       render :location
-    elsif params.keys.include?("location")
+    elsif params.include?("location")
       render :city
     else
       render :index
