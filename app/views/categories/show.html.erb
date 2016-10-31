@@ -3,4 +3,4 @@
 
 <p> Jobs with <%= @category.title %> Category<p>
 
-<%= @category.jobs == [] ? "No Jobs are assigned to this category" : @category.jobs.pluck(:title).join(", ")  %>
+<%= @category.jobs == [] ? "No Jobs are assigned to this category" : @format  %>

@@ -18,6 +18,7 @@ class CategoriesController < ApplicationController
 
   def show
     @category =  Category.find(params[:id])
+    @format =  @category.format_array
   end
 
   def edit
