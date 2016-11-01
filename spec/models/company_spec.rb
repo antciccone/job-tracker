@@ -34,4 +34,7 @@ describe Company do
       expect(company).to respond_to(:jobs)
     end
   end
+
+
+
 end

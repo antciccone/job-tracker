@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <title>Job Tracker</title>
+    <link href='css/bootstrap.css' rel='stylesheet'>
+    <link href='css/main.css' rel='stylesheet'>
+</head>
+
+<div class='navbar navbar-inverse'>
+<a class='navbar-brand'  <%= link_to "Companies", companies_path %> </a>
+<a class='navbar-brand'  <%= link_to "New Category", new_category_path %> </a>
+
+</div>
+
+
+
+<%= link_to "All Companines", companies_path %>
+
+<h1> All Categories </h1>
+<% @categories.each do |category| %>
+<h4> <%= link_to category.title, category_path(category)%> </h4>
+<%= link_to "Edit", edit_category_path(category) %>
+<%= link_to "Delete", category_path(category), method: :delete %>
+
+
+<% end %>

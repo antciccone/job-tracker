@@ -1,0 +1,6 @@
+<%= link_to "Category Index", categories_path %>
+<h1> Category Title </h1>
+
+<p> Jobs with <%= @category.title %> Category<p>
+
+<%= @category.jobs == [] ? "No Jobs are assigned to this category" : @format  %>

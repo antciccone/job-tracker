@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <title>Job Tracker</title>
+    <link href='css/bootstrap.css' rel='stylesheet'>
+    <link href='css/main.css' rel='stylesheet'>
+</head>
+
+<body>
+
+  <div class='navbar navbar-inverse'>
+<a class='navbar-brand' <%= link_to "Companies Sorted by Location", ("#{companies_path}""?sort=location") %></a>
+<a class='navbar-brand' <%= link_to "Jobs Sorted by Interest", ("#{jobs_path}""?sort=interest") %></a>
+<a class='navbar-brand' <%= link_to "Companies", ("#{companies_path}") %></a>
+
+<ul class='nav navbar-nav navbar-right'>
+
+<a class="dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Cities<span class="caret"></span></a>
+<ul class="dropdown-menu">
+<% @companies.each do |city| %>
+<li><%= link_to city, ("#{companies_path}""?location=""#{city}") %><li>
+<% end %>
+</ul>
+</ul>
+</div>
+
+<h4> Top Three Companies Average Level of interest </h4>
+<ol>
+<% @company.each do |k, v| %>
+<li><%= "#{Company.find(k).name}'s jobs have a #{v} average level of Interest"%></li>
+<% end %>
+</ol>
+
+
+<p> Count of Jobs by level of Interest </p>
+  <% @job.each do |interest, number| %>
+  <ul>
+   <li><%="#{number.to_s} Jobs with a level of interest of #{interest}" %></li>
+ </ul>
+   <% end  %>
+
+
+
+  <body>
+
+
+      <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+      <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+      <script src='js/bootstrap.js'></script>
+    </body>
+  </html>

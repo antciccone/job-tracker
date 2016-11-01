@@ -1,0 +1,5 @@
+<h1> City: <%= @company.first.city %> </h1>
+
+<p> Amount of Jobs in: <%= @company.first.city %>
+<%= @company.joins(:jobs).count %>
+<p>Companies in <%= @company.first.city %>: <%=@company.pluck(:name).join(", ") %><p>
