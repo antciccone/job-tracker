@@ -5,8 +5,10 @@ Title: <%= @job.title %>
 <br>
 
 Description: <%= @job.description %>
+ <% @job.tags.each do |tag| %>
+ <%= tag.title %> - <%= tag.count_jobs %>
+ <% end %>
 <br>
-
 Level of Interest: <%= @job.level_of_interest %>
 <br>
 
